@@ -4,40 +4,37 @@
 @endsection
 
 @section('content')
-<div class="container">
-	 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Lista de usuarios</h3>
-  </div>
-  <div class="panel-body">
-    	<table class="table table-bordered ">
- 		<thead>
- 		<tr>
- 			
- 			<td>Nombre</td>
- 			<td>Email</td>
- 			<td>Tipo</td>
- 			<td>Acciones</td>
- 		</tr>
- 			
+	<a class="btn btn-info" href="{{route('admin.users.create')}}" role="button">Nuevo usuario</a><hr>
+
+    <table class="table table-striped ">
+ 		<thead> 			
+ 			<th>Nombre</th>
+ 			<th>Email</th>
+ 			<th>Tipo</th>
+ 			<th>Acciones</th> 				
  		</thead>
+
  		<tbody>
  			<tr>
  			@foreach ($users as $user ) 
  			
  			<td>{{$user->name}}</td>
  			<td>{{$user->email}}</td>
- 			<td>{{$user->type}}</td>
- 			<td><button type="button" class="btn btn-success">Editar</button>
- 			    <button type="button" class="btn btn-danger">Eliminar</button>
+	 		<td>	@if($user->type == "admin")
+	 				<span class="label label-primary">Admin</span>
+	 			@else
+	 				<span class="label label-default">Miembro</span>
+	 			@endif
+	 		</td>	
+
+
+ 			<td>{!!link_to_route('admin.users.edit', $title = 'Editar', $parameters = $user, $attributes = ['class'=>'btn btn-success'] )!!}
+ 			    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> </button>
  			</td>
  			</tr>
  			@endforeach	
  		</tbody>
  	</table>
  	{!! $users->render() !!}
-  </div>
-</div>
- 	
-</div> 
+   
 @endsection

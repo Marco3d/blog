@@ -5,10 +5,6 @@
 @endsection
 
 @section('content')
-<div class="container">
- <div class="panel panel-default">
-	 <div class="panel-heading">Crear usuario</div>
-	 	<div class="panel-body">
 
     		{!! Form::open(['route' => 'admin.users.store', 'method' => 'POST']) !!}
 				<div class="form-group">
@@ -39,11 +35,6 @@
 
 			    
 			{!! Form::close() !!}
-  		
-  		</div>
-  			    
- </div>
-</div> 
 
 
 @endsection
