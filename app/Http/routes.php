@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route:: get('/', [
+	         'as' =>'home',
+	         'uses' =>'FrontController@index' ]);
 
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users','UsersController');

@@ -3,9 +3,15 @@
 @section('title', 'Lista de usuarios')
 @endsection
 
+
 @section('content')
 	<a class="btn btn-info" href="{{route('admin.users.create')}}" role="button">Nuevo usuario</a><hr>
-
+	@if(Session::has('message'))
+	<div class="alert alert-success alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  {{Session::get('message')}}
+	</div>
+    @endif
     <table class="table table-striped ">
  		<thead> 			
  			<th>Nombre</th>
@@ -28,8 +34,9 @@
 	 		</td>	
 
 
- 			<td>{!!link_to_route('admin.users.edit', $title = 'Editar', $parameters = $user, $attributes = ['class'=>'btn btn-success'] )!!}
- 			    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> </button>
+ 			<td>{!!link_to_route('admin.users.edit', $title = '', $parameters = $user, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
+
+ 			    
  			</td>
  			</tr>
  			@endforeach	
