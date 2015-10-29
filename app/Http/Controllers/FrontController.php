@@ -20,4 +20,8 @@ class FrontController extends Controller
         return view('admin.index');
     }
 
+    public function logindex(){
+        return view('admin.login');
+    }
+
 }

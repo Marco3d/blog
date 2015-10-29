@@ -19,6 +19,13 @@ Route:: get('/admin/index', [
 	         'as' =>'administrador',
 	         'uses' =>'FrontController@admin' ]);
 
+Route:: get('/admin/login', [
+	         'as' =>'administrador',
+	         'uses' =>'FrontController@logindex' ]);
+
+
+
+
 
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users','UsersController');
