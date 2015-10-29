@@ -15,7 +15,17 @@ Route:: get('/', [
 	         'as' =>'home',
 	         'uses' =>'FrontController@index' ]);
 
+Route:: get('/admin/index', [
+	         'as' =>'administrador',
+	         'uses' =>'FrontController@admin' ]);
+
+
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users','UsersController');
+	Route::resource('categories','CategoriesController');
+
+
+	
 
 });
+
