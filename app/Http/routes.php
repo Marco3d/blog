@@ -23,6 +23,7 @@ Route:: get('/admin/index', [
 Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users','UsersController');
 	Route::resource('categories','CategoriesController');
+	Route::resource('articles','ArticlesController');
 
 
 	

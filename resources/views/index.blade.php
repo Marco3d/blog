@@ -5,10 +5,29 @@
 @endsection
 
 @section('content')
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ <div class="container">
+  @foreach($articles as $article)    	    
+	  <div class="panel panel-primary">
+	  	<div class="panel-heading">
+	  		<h3 class="panel-title">{{$article ->title}} por <i class="fa fa-pencil-square-o"></i> <i>{{$article->user->name}}</i></h3>
+	  	</div>
+	  	<div class="panel-footer"><i class="fa fa-folder"></i> Categoria :<i>{{$article->category->name}}</i></div>
+	  	<div class="panel-body">
+	  		{{$article ->content}}
+	  	</div>
+	  	<div class="panel-footer"><i class="fa fa-clock-o"></i> Fecha publicación :{{$article->created_at}}</div>
+
+	  </div>
+  @endforeach
+
+</div> 
+<div class="container">
+	{!! $articles->render() !!}
+</div> 
+
+
+
+	
+		
+	
 @endsection

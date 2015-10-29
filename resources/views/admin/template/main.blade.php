@@ -5,6 +5,7 @@
 	<title>@yield('title', 'Default') | Panel de administración</title>
 	<link rel="stylesheet"  href="{{ asset('css/bootstrap.css')}}">
 	<link rel="stylesheet"  href="{{ asset('css/font-awesome.min.css')}}">
+	<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 </head>
 <body>
 	@include('admin.template.partials.nav')
