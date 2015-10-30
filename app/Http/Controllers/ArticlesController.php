@@ -10,6 +10,7 @@ use App\User;
 use App\Category;
 use Session;
 use Redirect;
+use Auth;
 
 class ArticlesController extends Controller
 {
@@ -33,10 +34,10 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-         $users = User::lists('name', 'id');
+         /*$users = User::lists('name', 'id');*/
          $categories =Category::lists('name', 'id');
 
-         return view('admin.articles.create',compact('users','categories'));
+         return view('admin.articles.create',compact(/*'users',*/'categories'));
     }
 
     /**

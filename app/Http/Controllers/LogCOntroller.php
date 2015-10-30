@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\LoginRequest;
+use Auth;
+use Session;
+use Redirect;
 use App\Http\Controllers\Controller;
 
-class LogCOntroller extends Controller
+
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +20,7 @@ class LogCOntroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.login');
     }
 
     /**
@@ -34,9 +39,13 @@ class LogCOntroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
-        //
+         if(Auth::attempt(['email'=>$request['email'], 'password'=>$request['password']])){
+            return Redirect::to('admin/index');
+        }
+        Session::flash('message-error','Datos son incorrectos');
+        return Redirect::to('log');
     }
 
     /**
@@ -82,5 +91,10 @@ class LogCOntroller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function logout(){
+        Auth::logout();
+        return Redirect::to('/');
     }
 }

@@ -18,11 +18,11 @@
 					{!! Form::label('content','Contenido') !!}
 					{!! Form::textarea('content',null,['class' =>'form-control', 'placeholder' =>'Contenido','required'])!!}
 				</div>						
-		   
-				 <div class="form-group">
-					{!! Form::label('usuario','Usuario') !!}
-					{!! Form:: select('user_id',$users, null,['class'=>'form-control']) !!}
+		       <div class="form-group">
+					
+					{!! Form::hidden('user_id',Auth::user()->id,['class' =>'form-control','required'])!!}
 				</div>
+				
 
 				<div class="form-group">
 					{!! Form::label('categoria','Categoria') !!}

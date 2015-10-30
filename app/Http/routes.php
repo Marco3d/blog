@@ -19,9 +19,9 @@ Route:: get('/admin/index', [
 	         'as' =>'administrador',
 	         'uses' =>'FrontController@admin' ]);
 
-Route:: get('/admin/login', [
+/*Route:: get('/admin/login', [
 	         'as' =>'administrador',
-	         'uses' =>'FrontController@logindex' ]);
+	         'uses' =>'FrontController@logindex' ]);*/
 
 
 
@@ -31,9 +31,8 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::resource('users','UsersController');
 	Route::resource('categories','CategoriesController');
 	Route::resource('articles','ArticlesController');
-
-
 	
-
 });
 
+Route::resource('log','LogController');
+Route::get('logout','LogController@logout');

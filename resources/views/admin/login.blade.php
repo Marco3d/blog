@@ -1,26 +1,33 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>@yield('title', 'Default') | Panel de administración</title>
+	<title>Panel de administración</title>
 	<link rel="stylesheet"  href="{{ asset('css/bootstrap.css')}}">
 	<link rel="stylesheet"  href="{{ asset('css/font-awesome.min.css')}}">
-	<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
+	
 </head>
 <body>
 	<br><br>
                <div class="container">
 
+
+					   @if(Session::has('message-error'))
+						<div class="alert alert-danger alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  {{Session::get('message-error')}}
+						</div>
+						@endif
 					
-
-
 
 						<div class="panel panel-primary">
 						  <div class="panel-heading">
 						    <h3 class="panel-title"><b>INGRESO</b></h3>
 						  </div>
 						  <div class="panel-body">
-						    {!!Form::open()!!}
+						            {!!Form::open(['route'=>'log.store', 'method'=>'POST'])!!}
 								<div class="form-group">
 									{!!Form::label('correo','Correo:')!!}	
 									{!!Form::email('email',null,['class'=>'form-control', 'placeholder'=>'Ingresa tu correo'])!!}
