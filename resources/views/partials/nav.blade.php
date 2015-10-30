@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="log">Admin</a></li>
+        <li><a href="{{route('administrador')}}">Admin</a></li>
          
         
 

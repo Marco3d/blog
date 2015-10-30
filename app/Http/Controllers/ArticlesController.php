@@ -14,6 +14,11 @@ use Auth;
 
 class ArticlesController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+         $this->middleware('admin', ['only' =>['edit','update','destroy']] );
+        
+    }
     /**
      * Display a listing of the resource.
      *
