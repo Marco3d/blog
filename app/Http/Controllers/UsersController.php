@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Redirect;
 use Session;
+use Laracasts\Flash\Flash;
 
 class UsersController extends Controller
 {
@@ -51,6 +52,7 @@ class UsersController extends Controller
         //dd($user);
         $user->save();
         Session::flash('message','Usuario Creado Correctamente');
+        /*Flash::success('Usuario creado correctamente');*/ /*usando paquete laracast/flash*/
         return redirect::to('admin/users') ;
         
     }
@@ -104,7 +106,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-         User::destroy($id);
+         /*dd($id);*/
+         $user = User::find($id);
+         $user->delete();
+         /*User::destroy($id);*/
          Session::flash('message','Usuario eliminado Correctamente');
          return redirect::to('admin/users') ;
 

@@ -10,6 +10,7 @@
 	<div class="alert alert-success alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	  {{Session::get('message')}}
+	  <!-- @include('flash::message') --> <!-- usanso paquete laracast flash -->
 	</div>
     @endif
     <table class="table table-striped ">
@@ -35,6 +36,7 @@
 
 
  			<td>{!!link_to_route('admin.users.edit', $title = '', $parameters = $user, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
+ 			<a class="btn btn-danger" href="{{route('admin.users.destroy', $user->id)}}" onclick="return confirm('¿Deseas eliminar el registro?')" role="button"><i class="fa fa-trash-o"></i></a>
 
  			    
  			</td>

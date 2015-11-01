@@ -28,6 +28,8 @@
 
  			<td>{!!link_to_route('admin.categories.edit', $title = '', $parameters = $category, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
 
+ 			<a class="btn btn-danger" href="{{route('admin.categories.destroy', $category->id)}}" onclick="return confirm('¿Deseas eliminar el registro?')" role="button"><i class="fa fa-trash-o"></i></a>
+
  			    
  			</td>
  			</tr>

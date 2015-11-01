@@ -32,9 +32,9 @@
 	{!!Form::submit('Actualizar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}<br>
 
-	{!!Form::open(['route'=>['admin.articles.destroy', $article], 'method' => 'DELETE'])!!}
+	<!-- {!!Form::open(['route'=>['admin.articles.destroy', $article], 'method' => 'DELETE'])!!}
 	{!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
 	{!!Form::close()!!}
-
+	 -->
 
 @endsection

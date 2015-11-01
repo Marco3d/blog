@@ -15,12 +15,12 @@
     <table class="table table-striped ">
  		<thead> 			
  			<th>Nombre</th>
- 			<th>Contenido</th>
+ 			<!-- <th>Contenido</th> -->
  			<th>Autor</th>
  			<th>Categoria</th>
- 			<th>Slug</th>
+ 			<!-- <th>Slug</th>
  			<th>Publicado</th>
- 			<th>Modificado</th>
+ 			<th>Modificado</th> -->
 
 
  			
@@ -32,16 +32,18 @@
  			@foreach ($articles as $article ) 
  			
  			<td>{{$article->title}}</td>
- 			<td>{{$article->content}}</td>
+ 			<!-- <td>{{$article->content}}</td> -->
  			<td>{{$article->user->name}}</td>
  			<td>{{$article->category->name}}</td>
- 			<td>{{$article->slug}}</td>
+ 			<!-- <td>{{$article->slug}}</td>
  			<td>{{$article->created_at}}</td>
  			<td>{{$article->updated_at}}</td>
-
+ 			 -->
  			
 
  			<td>{!!link_to_route('admin.articles.edit', $title = '', $parameters = $article, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
+
+ 			<a class="btn btn-danger" href="{{route('admin.articles.destroy', $article->id)}}" onclick="return confirm('¿Deseas eliminar el registro?')" role="button"><i class="fa fa-trash-o"></i></a>
 
  			    
  			</td>
