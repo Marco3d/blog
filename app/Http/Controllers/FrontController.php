@@ -10,6 +10,7 @@ use App\Article;
 
 
 
+
 class FrontController extends Controller
 {
 	public function __construct(){
@@ -24,8 +25,14 @@ class FrontController extends Controller
         return view('admin.index');
     }
 
-    public function logindex(){
-        return view('admin.login');
-    }
+   
+    public function article($slug){
+       
+        $articles = Article::findBySlug($slug);
+
+
+        return view('article',compact('articles'));
+    } 
+
 
 }

@@ -15,6 +15,10 @@ Route:: get('/', [
 	         'as' =>'home',
 	         'uses' =>'FrontController@index' ]);
 
+Route::get('article/{slug}', [
+	         'as' =>'article',
+	         'uses' =>'FrontController@article' ]);
+
 Route:: get('/admin/index', [
 	         'as' =>'administrador',
 	         'uses' =>'FrontController@admin' ]);
@@ -22,6 +26,7 @@ Route:: get('/admin/index', [
 /*Route:: get('/admin/login', [
 	         'as' =>'administrador',
 	         'uses' =>'FrontController@logindex' ]);*/
+
 
 
 

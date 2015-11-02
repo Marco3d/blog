@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use DB;
+use Carbon\Carbon;
 
 
 class Article extends Model implements SluggableInterface
@@ -18,7 +19,16 @@ class Article extends Model implements SluggableInterface
     ];
      protected $table = "articles";
     
-     protected $fillable = ['title','content', 'user_id', 'category_id'];
+     protected $fillable = ['title','content', 'user_id', 'category_id', 'path'];
+     
+    /* funcion para subir los archivos y darles diferentes nombres*/
+      public function setPathAttribute($path){
+            if(! empty($path)){
+            $name = Carbon::now()->second.$path->getClientOriginalName();
+            $this->attributes['path'] = $name;
+            \Storage::disk('local')->put($name, \File::get($path));
+        }
+    }
 
      //un articulo solo puede pertenecer a una categoria
      //se define la relacion inversa de la relacion 

@@ -9,7 +9,7 @@
            
  			
 
-    		{!! Form::open(['route' => 'admin.articles.store', 'method' => 'POST']) !!}
+    		{!! Form::open(['route' => 'admin.articles.store', 'method' => 'POST','files' => true]) !!}
 				<div class="form-group">
 					{!! Form::label('title','Titulo') !!}
 					{!! Form::text('title',null,['class' =>'form-control', 'placeholder' =>'Título del articulo','required'])!!}
@@ -27,6 +27,11 @@
 				<div class="form-group">
 					{!! Form::label('categoria','Categoria') !!}
 					{!! Form:: select('category_id',$categories, null,['class'=>'form-control']) !!}
+				</div>
+
+				<div class="form-group">
+					{!!Form::label('imagen','Imagen:')!!}
+					{!!Form::file('path')!!}
 				</div>
 
 				<div class="form-group">

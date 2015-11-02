@@ -21,6 +21,7 @@
  			<!-- <th>Slug</th>
  			<th>Publicado</th>
  			<th>Modificado</th> -->
+ 			<th>Imagen</th>
 
 
  			
@@ -39,7 +40,11 @@
  			<td>{{$article->created_at}}</td>
  			<td>{{$article->updated_at}}</td>
  			 -->
- 			
+ 			 @if(empty($article->path))
+ 			  <td><img src="{{asset('images')}}/no-imagen.jpg" alt="" style="width:100px;"/></td>
+ 			 @else
+ 			 <td><img src="{{asset('images')}}/{{$article->path}}" alt="" style="width:100px;"/></td>
+ 			 @endif
 
  			<td>{!!link_to_route('admin.articles.edit', $title = '', $parameters = $article, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
 
