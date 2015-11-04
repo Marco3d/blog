@@ -6,6 +6,10 @@
 	<link rel="stylesheet"  href="{{ asset('css/bootstrap.css')}}">
 	<link rel="stylesheet"  href="{{ asset('css/font-awesome.min.css')}}">
 	<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
+
+	
+    
+
 </head>
 <body>
 	@include('admin.template.partials.nav')
@@ -16,6 +20,7 @@
 	  		<h3 class="panel-title">@yield('title')</h3>
 	  	</div>
 	  	<div class="panel-body">
+	  	 
 	  		@yield('content')
 	  	</div>
 	  </div>

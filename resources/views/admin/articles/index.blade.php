@@ -15,7 +15,7 @@
     <table class="table table-striped ">
  		<thead> 			
  			<th>Nombre</th>
- 			<!-- <th>Contenido</th> -->
+ 			<th>Contenido</th> 
  			<th>Autor</th>
  			<th>Categoria</th>
  			<!-- <th>Slug</th>
@@ -33,7 +33,7 @@
  			@foreach ($articles as $article ) 
  			
  			<td>{{$article->title}}</td>
- 			<!-- <td>{{$article->content}}</td> -->
+ 			<td>{{$article->content}}</td> 
  			<td>{{$article->user->name}}</td>
  			<td>{{$article->category->name}}</td>
  			<!-- <td>{{$article->slug}}</td>

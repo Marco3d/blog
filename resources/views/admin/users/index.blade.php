@@ -35,7 +35,8 @@
 	 		</td>	
 
 
- 			<td>{!!link_to_route('admin.users.edit', $title = '', $parameters = $user, $attributes = ['class'=>'btn btn-success fa fa-pencil-square-o'] )!!}
+ 			<td><a class="btn btn-success" href="{{route('admin.users.edit', $user->id)}}"  role="button">
+ 			<i class="fa fa-pencil-square-o"></i></a>
  			<a class="btn btn-danger" href="{{route('admin.users.destroy', $user->id)}}" onclick="return confirm('¿Deseas eliminar el registro?')" role="button"><i class="fa fa-trash-o"></i></a>
 
  			    

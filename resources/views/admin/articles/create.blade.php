@@ -14,10 +14,16 @@
 					{!! Form::label('title','Titulo') !!}
 					{!! Form::text('title',null,['class' =>'form-control', 'placeholder' =>'Título del articulo','required'])!!}
 				</div>
-				<div class="form-group">
+
+				 <div class="form-group">
 					{!! Form::label('content','Contenido') !!}
-					{!! Form::textarea('content',null,['class' =>'form-control', 'placeholder' =>'Contenido','required'])!!}
-				</div>						
+					{!! Form::textarea('content',null,['class' =>'ckeditor', 'name'=>'editor1',
+					  'id' =>'editor1' ])!!}
+				</div> 
+				
+
+				
+
 		       <div class="form-group">
 					
 					{!! Form::hidden('user_id',Auth::user()->id,['class' =>'form-control','required'])!!}
@@ -42,6 +48,8 @@
 
 			    
 			{!! Form::close() !!}
+
+			
 
 
 @endsection

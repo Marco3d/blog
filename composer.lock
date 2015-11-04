@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "712643ef41fafdf95a1376c2e6a80217",
-    "content-hash": "29ef59bd011c201eefe1af3a77dd791d",
+    "hash": "a96e4292e58bdfd11124a9a66b60a096",
+    "content-hash": "f9167c167092c81f11a2e5b6b1f9963c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1880,6 +1880,60 @@
             "time": "2015-10-25 17:17:38"
         },
         {
+            "name": "unisharp/laravel-ckeditor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UniSharp/laravel-ckeditor.git",
+                "reference": "5331c2474c39bbcc436348ff4bc82320194556ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UniSharp/laravel-ckeditor/zipball/5331c2474c39bbcc436348ff4bc82320194556ec",
+                "reference": "5331c2474c39bbcc436348ff4bc82320194556ec",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0.17|5.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unisharp\\Ckeditor\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "http://cksource.com"
+                },
+                {
+                    "name": "UniSharp Ltd. (Composer Package Maintainer)",
+                    "homepage": "http://www.unisharp.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor (for laravel).",
+            "homepage": "http://ckeditor.com",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "laravel",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2015-10-02 01:25:58"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.1",
             "source": {
@@ -3151,7 +3205,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "unisharp/laravel-ckeditor": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

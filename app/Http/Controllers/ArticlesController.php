@@ -11,6 +11,7 @@ use App\Category;
 use Session;
 use Redirect;
 use Auth;
+use Unisharp\Ckeditor;
 
 class ArticlesController extends Controller
 {
@@ -27,7 +28,7 @@ class ArticlesController extends Controller
     public function index()
     {
         
-        $articles= Article::OrderBy('id','ASC')->paginate(4);
+        $articles= Article::OrderBy('id','DESC')->paginate(4);
         return view('admin.articles.index',compact('articles'));
         
     }
@@ -80,6 +81,7 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
+      
          $users = User::lists('name', 'id');
          $categories =Category::lists('name', 'id');
 

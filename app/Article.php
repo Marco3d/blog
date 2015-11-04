@@ -19,7 +19,7 @@ class Article extends Model implements SluggableInterface
     ];
      protected $table = "articles";
     
-     protected $fillable = ['title','content', 'user_id', 'category_id', 'path'];
+     protected $fillable = ['title','content','path','tags', 'user_id', 'category_id', ];
      
     /* funcion para subir los archivos y darles diferentes nombres*/
       public function setPathAttribute($path){
@@ -42,16 +42,16 @@ class Article extends Model implements SluggableInterface
      	return $this->belongsTo('App\User');
      }
 
-     public function images(){
+    /* public function images(){
      	return $this->hasMany('App\Image');
-     }
+     }*/
 
      //articulos y tags..relacion muchos a muchos
 
-     public function tags(){
+     /*public function tags(){
      	return $this->belongsToMany('App\Tag')->withTimestamps();
      }
-
+*/
      
 
     
