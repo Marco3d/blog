@@ -8,7 +8,7 @@
       <div id="content" class="container"> 
         	<div class="row">
         		<div class="col-md-8 ">
-        			<h1>Las últimas Noticias</h1>
+        			<h1>Estas son últimas Noticias</h1>
         			@foreach($articles as $article)  
         			<article>
         				<h2><a href="{{'article'}}/{{$article->slug}}">{{$article ->title}}</a></h2>
