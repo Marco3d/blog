@@ -9,14 +9,19 @@ use DB;
 use Carbon\Carbon;
 
 
+
 class Article extends Model implements SluggableInterface
 {
+
+    
      use SluggableTrait;
      
      protected $sluggable = [
         'build_from' => 'title',
         'save_to'    => 'slug',
     ];
+
+    
      protected $table = "articles";
     
      protected $fillable = ['title','content','path','tags', 'user_id', 'category_id', ];

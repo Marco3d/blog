@@ -20,7 +20,8 @@
        						</div>
         					<div class="group2 col-sm-6 col-md-6">
                 				<!-- <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>    -->         
-                  				<span class="glyphicon glyphicon-time"></span> {{$article->created_at}}                         
+                  				<span class="glyphicon glyphicon-time"></span> {{Date::parse($article->created_at)->format('j \d\e\ F \d\e\ Y')}} 
+
         					</div>
         					<hr>
         					<br />

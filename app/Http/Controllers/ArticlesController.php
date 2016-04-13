@@ -12,12 +12,16 @@ use Session;
 use Redirect;
 use Auth;
 use Unisharp\Ckeditor;
+use Carbon\Carbon;
+
+
 
 class ArticlesController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
          $this->middleware('admin', ['only' =>['edit','update','destroy']] );
+        
         
     }
     /**
@@ -71,6 +75,14 @@ class ArticlesController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function fecha()
+    {
+        
+        $date = Date::format('l j F Y H:i:s');
+        return $date;
+       
     }
 
     /**
